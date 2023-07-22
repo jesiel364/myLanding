@@ -28,7 +28,7 @@
   font-weight: 100;
 
   /* This was made with GlassGenerator.netlify.app */
-  z-index: 9999;
+  z-index: 9998;
   position: fixed;
   top: 0;
   left: 0;
@@ -64,8 +64,16 @@
   /*margin: auto;*/
   margin-right: 14px;
   padding-bottom: 0;
+  color: #fefefe;
   /*background-color: blue;*/
   padding: 0px;
+  background: transparent;
+  border-style: solid;
+  border: none;
+}
+
+.Icon:click {
+  background-color: #1fa7c9;
 }
 
 .Logo {
@@ -142,4 +150,57 @@
 
 #container {
   margin-top: 0;
+}
+
+.disable{
+  background-color: red;
+  display: none;
+}
+
+.active{
+  /*background: blue;*/
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+  /*background-color: rgba(255, 255, 255, 0.075);*/
+  background: transparent;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+  border: 0px rgba(255, 255, 255, 0.4) solid;
+  border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+  border-right: 0px rgba(40, 40, 40, 0.35) solid;
+  color: #fefefe;
+}
+
+#menu-container{
+  
+  
+  
+}
+
+#menu-card{
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: #191919 ;
+  border-radius: 12px;
+  max-width: 250px;
+  align-content: right;
+  display: flex ;
+  flex-direction: column ;
+  margin-left: auto;
+  padding: 20px;
+  font-size: 16px ;
+  font-weight: 600 ;
+}
+
+#menu-card #first{
+  display: flex ;
+  justify-content: space-between ;
+}
+
+#first button{
+  color: #fefefe ;
+  background: transparent ;
+  border-style: solid ;
+  border: none ;
 }
