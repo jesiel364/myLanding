@@ -9,6 +9,7 @@ import { mdiXml, mdiMagnify, mdiDotsVertical, mdiMenu, mdiClose, mdiInstagram, m
 import { useContext } from "react";
 import { FormContext } from "./Context.tsx";
 import PC from "./assets/pc.jpg"
+import Pic from "./assets/dev.png"
 
 
 
@@ -26,20 +27,20 @@ function handle(evt){
   
   
     <div id="menu-container">
-    <div className={show ? "active": "disable"}>
+    <div onClick={evt => {setShow(false)}}className={show ? "active": "disable"}>
     <div id="menu-card">
     
     <div id="first">
       
-      <p>commodo</p>
+      <a href="#about">About me</a>
       <button onClick={evt=> {handle(evt)}}>
     <Icon path={mdiClose} size={1} />
     </button>
     </div>
     
-    <p>magna</p>
-    <p>proident</p>
-    <p>adipisicing</p>
+    <a href="#skills">Skills</a>
+    <a href="#projects" >Projects</a>
+    <a href="#footer">Contact</a>
     
     </div>
     
@@ -103,7 +104,9 @@ function NavBar() {
 function Section() {
   return (
     <div className="Section">
-      <p id="title">Reprehenderit</p>
+    <img src={Pic} />
+    
+
       <p id="subt">Proident incididunt consequat do consequat</p>
 
       <p id="body">
@@ -122,7 +125,7 @@ function About(){
   return(
 
 <div id='about'>
-<p id='subt'>Hi, I'm Jesiel Web Developer</p>
+<p id='subt'>Hi, I'm Jesiel, Web Developer</p>
 <p id='title'>Front End Developer / JavaScript / Python </p>
 
 <p id='body'>
@@ -140,7 +143,7 @@ function About(){
 function Skills(){
   return(
 
-<div id='about'>
+<div id='skills'>
 <p id='title'>Vitae et leo duis ut diam quam.</p>
 
 <p id='subt'>Skills & Experience</p>
@@ -203,13 +206,19 @@ function Footer(){
 You can also follow me on Instagram.
 </p>
 
-<div><p>Copyright © 2023 Jesiel364 Inc.</p>
+<hr id="line" />
+
+<div id="footer">
+<div>
 <button>
   <Icon path={mdiGithub} size={1} />
 </button>
 <button>
   <Icon path={mdiInstagram} size={1} />
 </button>
+
+</div>
+<p>Copyright © 2023 Jesiel364 Inc.</p>
 
 
     
