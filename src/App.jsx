@@ -56,7 +56,7 @@ function BackVideo() {
   return (
     <video
       loop
-      className="backVideo"
+      className="BackVideo"
       src={video}
       type="video/mp4"
       muted
