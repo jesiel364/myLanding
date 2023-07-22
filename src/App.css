@@ -70,6 +70,7 @@
   background: transparent;
   border-style: solid;
   border: none;
+/*  display: flex;*/
 }
 
 .Icon:click {
@@ -93,7 +94,7 @@
 }
 
 .Logo #title {
-  /*color: blue;*/
+  color: #fefefe;
   font-weight: 100;
   display: flex;
   margin: auto;
@@ -132,17 +133,17 @@
   padding-right: 22px;
 }
 
-.Section #title {
+#title {
   color: #1fa7c9;
   font-weight: 800;
   font-size: 16px;
 }
-.Section #subt {
+#subt {
   font-weight: 800;
   font-size: 30px;
   color: #cdc8c8;
 }
-.Section #body {
+#body {
   color: #adb9cc;
   font-weight: 300;
   font-size: 18px;
@@ -204,3 +205,34 @@
   border-style: solid ;
   border: none ;
 }
+
+@media only screen and (max-width: 768px) {
+  #skills-list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+#skills-list p{
+/*  background-color: green;*/
+}
+
+  
+}
+
+#about{
+  margin-top: 240px;
+  padding: 20px;
+}
+
+#projects{
+  margin-top: 200px;
+  padding: 20px;
+}
+
+#projects img{
+  height: 200px;
+  display: flex;
+  margin: auto;
+}
+
