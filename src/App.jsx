@@ -9,7 +9,6 @@ import { useContext } from "react";
 import { FormContext } from "./Context.tsx";
 import PC from "./assets/pc.jpg"
 import Pic from "./assets/dev.png"
-import X from "./assets/icons/X.svg"
 
 
 function FlatIcon(props){
