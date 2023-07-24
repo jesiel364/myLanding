@@ -11,8 +11,9 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  height: 100vh;
-  /*margin: 0;*/
+  min-width: 100%;
+  min-height: 100%;
+
 }
 
 .NavBar {
@@ -64,7 +65,7 @@
   /*margin: auto;*/
   margin-right: 14px;
   padding-bottom: 0;
-  color: #fefefe;
+  color: #adb9cc;
   /*background-color: blue;*/
   padding: 0px;
   background: transparent;
@@ -73,8 +74,8 @@
 /*  display: flex;*/
 }
 
-.Icon:click {
-  background-color: #1fa7c9;
+.Icon:hover {
+  color: #fefefe;
 }
 
 .Logo {
@@ -131,10 +132,11 @@
   margin-top: 0;
   padding-left: 22px;
   padding-right: 22px;
+  scroll-behavior: smooth;    /* <----- THE SECRET ---- */
 }
 
 img{
-  height: 200px;
+  height: 240px;
   display: flex ;
   margin: auto ;
 }
@@ -235,11 +237,13 @@ a{
 #about, #skills{
   margin-top: 240px;
   padding: 20px;
+  scroll-behavior: smooth;    /* <----- THE SECRET ---- */
 }
 
 #projects{
   margin-top: 200px;
   padding: 20px;
+  
 }
 
 #projects img{
@@ -269,4 +273,39 @@ a{
   margin-right: 10px;
   
   color: #adb9cc;
+}
+
+#menu-flex{
+  /* background-color: #1fa7c9; */
+  display: flex;
+  margin: auto;
+  margin-right: 0;
+  margin-left: auto;
+
+
+}
+
+#menu-flex a{
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #adb9cc;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+#menu-flex a:hover{
+  color: #fefefe;
+  transition: 500ms;
+
+}
+
+@media only screen and (min-width: 768px) {
+  .Section{
+    /* background-color: blue; */
+    display: flex;
+  }
+
+  .Section img{
+    height: 400px;
+  }
 }

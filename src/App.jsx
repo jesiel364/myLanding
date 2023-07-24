@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import video from "./assets/video.mp4";
-// import "@mdi/font/css/materialdesignicons.css"
+import video from "./assets/video2.mp4";
 import Icon from "@mdi/react";
-import { mdiXml, mdiMagnify, mdiDotsVertical, mdiMenu, mdiClose, mdiInstagram, mdiGithub} from "@mdi/js";
+import { mdiXml, mdiMagnify, mdiDotsVertical, mdiWeatherNight, mdiWeatherSunny, mdiMenu, mdiClose, mdiInstagram, mdiGithub, mdiGit} from "@mdi/js";
 import { useContext } from "react";
 import { FormContext } from "./Context.tsx";
 import PC from "./assets/pc.jpg"
 import Pic from "./assets/dev.png"
+import X from "./assets/icons/X.svg"
 
 
+function FlatIcon(props){
+  <img src={props.src} />
+}
 
 function Menu(props) {
 const {show, setShow} = useContext(FormContext)
@@ -26,8 +29,8 @@ function handle(evt){
   return (
   
   
-    <div id="menu-container">
-    <div onClick={evt => {setShow(false)}}className={show ? "active": "disable"}>
+    <div onClick={evt => {setShow(false)}} id="menu-container">
+    <div  className={show ? "active": "disable"}>
     <div id="menu-card">
     
     <div id="first">
@@ -35,13 +38,23 @@ function handle(evt){
       <a href="#about">About me</a>
       <button onClick={evt=> {handle(evt)}}>
     <Icon path={mdiClose} size={1} />
+   
     </button>
+  
     </div>
     
     <a href="#skills">Skills</a>
     <a href="#projects" >Projects</a>
     <a href="#footer">Contact</a>
+    <a href="#footer">GitHub</a>
     
+    <div id="last">
+      <p>Switch Theme</p>
+      <select>
+        <option><Icon path={mdiWeatherNight} size={1}/> Dark</option>
+        <option><Icon path={mdiWeatherSunny} size={1}/> Light</option>
+      </select>
+    </div>
     </div>
     
     </div>
@@ -66,7 +79,8 @@ function BackVideo() {
 }
 
 function NavBar() {
-  const {show, setShow} = useContext(FormContext )
+  const {show, setShow, windowSize} = useContext(FormContext )
+
 
   function handleClick(evt) {
     evt.preventDefault();
@@ -83,16 +97,29 @@ function NavBar() {
             <Icon path={mdiXml} size={1} />
           </div>
           <p id="title">jesiel364</p>
+    
         </div>
 
-        <div id="nav-right">
+        {windowSize<768 && (<div id="nav-right">
+          
           <button className="Icon">
             <Icon path={mdiMagnify} size={1} />
           </button>
           <button onClick={(evt) => handleClick(evt)} className="Icon">
             <Icon path={mdiDotsVertical} size={1} />
           </button>
-        </div>
+        </div>)}
+
+
+        {windowSize>768 && (<div id='menu-flex'>
+          <a href='#about'>About</a>
+          <a href="#skills">Skills</a>
+    <a href="#projects" >Projects</a>
+    <a href="#footer">Contact</a>
+    <span>|</span>
+    <a><Icon path={mdiWeatherNight} size={1} /></a>
+    <a><Icon path={mdiGithub} size={1} /></a>
+        </div>)}
       </div>
       
      
@@ -102,11 +129,14 @@ function NavBar() {
 }
 
 function Section() {
+
+
   return (
-    <div className="Section">
+    <div class="Section">
     <img src={Pic} />
     
 
+     <div>
       <p id="subt">Proident incididunt consequat do consequat</p>
 
       <p id="body">
@@ -117,6 +147,7 @@ function Section() {
       </p>
 
       <button>About me </button>
+    </div>
     </div>
   );
 }
