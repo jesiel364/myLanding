@@ -1,5 +1,19 @@
 import { useState, useEffect, useRef } from "react";
-import reactLogo from "./assets/react.svg";
+import adobeXd from "./assets/icons/icons8-adobe-xd.svg";
+import bootstrap from "./assets/icons/icons8-bootstrap.svg";
+
+import javascript from "./assets/icons/icons8-javascript.svg";
+import python from "./assets/icons/icons8-python.svg";
+import css3 from "./assets/icons/icons8-django.svg";
+import figma from "./assets/icons/icons8-figma.svg";
+import flask from "./assets/icons/icons8-flask.svg";
+import django from "./assets/icons/icons8-django.svg";
+import git from "./assets/icons/icons8-git.svg";
+import html5 from "./assets/icons/icons8-html5.svg";
+import nodejs from "./assets/icons/icons8-nodejs.svg";
+import visualStudio from "./assets/icons/icons8-visual-studio.svg";
+import react from "./assets/icons/icons8-react.svg";
+import vuejs from "./assets/icons/icons8-vue-js.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./aboutCard.css";
@@ -22,6 +36,9 @@ import { FormContext } from "./Context.tsx";
 import PC from "./assets/pc.jpg";
 import Pic from "./assets/dev.png";
 import Flag from "./assets/brasil.png";
+// const python = import("./assets/icons/icons8-python.svg")
+
+
 
 function FlatIcon(props) {
   <img src={props.src} />;
@@ -55,12 +72,12 @@ function Menu(props) {
             </button>
           </div>
 
-          <a href="#projects">Projects</a>
-          <a href="#footer">Contact</a>
+          <a href="#projects">projetos</a>
+          <a href="#footer">Contato</a>
           <a href="#footer">GitHub</a>
 
           <div id="last">
-            <p>Switch Theme</p>
+            <p>Trocar tema</p>
             <select>
               <option>
                 <Icon path={mdiWeatherNight} size={1} /> Dark
@@ -121,10 +138,10 @@ function NavBar() {
 
         {windowSize > 768 && (
           <div id="menu-flex">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#footer">Contact</a>
+            <a href="#about">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Projetos</a>
+            <a href="#footer">Contato</a>
             <span>|</span>
             <a>
               <Icon path={mdiWeatherNight} size={1} />
@@ -141,7 +158,7 @@ function NavBar() {
 
 function Section() {
   return (
-    <div class="Section">
+    <div id="about" class="Section">
       <img src={Pic} />
 
       <div>
@@ -153,7 +170,7 @@ function Section() {
           Sou um apaixonado desenvolvedor com um olhar entusiasmado para a
           criação de soluções inovadoras e eficientes.
           <br></br>Abaixo, você encontrará uma seleção de projetos que
-          demonstrem minha experiência e conhecimento em diversas áreas:{" "}
+          demonstrem minha experiência e conhecimento em diversas áreas:
         </p>
 
         <button>Experiências</button>
@@ -173,8 +190,10 @@ function randColor(){
 }
 
 
+
+
   return (
-    <div id="about">
+    <div >
       <div id="card">
       
         <div id="div1">
@@ -195,8 +214,34 @@ function randColor(){
 }
 
 function Skills() {
+
+  const skills = [
+    {name: 'JavaScript', icon: javascript},
+    {name: 'React', icon: react},
+    {name: 'Vite', icon: viteLogo},
+    {name: 'Vue', icon: vuejs},
+    {name: 'Node', icon: nodejs},
+    {name: 'Python', icon: python},
+    {name: 'Bootstrap', icon: bootstrap},
+    {name: 'CSS3', icon: css3},
+    {name: 'HTML5', icon: html5},
+    {name: 'Git', icon: git},
+    {name: 'Visual Studio', icon: visualStudio},
+    {name: 'Flask', icon: flask},
+    {name: 'Adobe XD', icon: adobeXd},
+    {name: 'Figma', icon: figma},
+  ]
+
+  skills.map(item =>{
+    console.log(item.name)
+  })
+
   return (
     <div id="skills">
+     
+
+       <div id='text'>  <About />
+        <div id='text-body'>
       <p id="subt">Habilidades & Experiência</p>
 
       <p id="body">
@@ -208,23 +253,23 @@ function Skills() {
         Vue ou React, utilizando plugins personalizados, recursos, animações e
         implementação de layouts interativos.
       </p>
+  </div>
 
+  
+</div>
+  <div>
       <div id="skills-list">
-        <p>JavaScript</p>
-        <p>React</p>
-        <p>Vue</p>
-        <p>Node</p>
-        <p>Python</p>
-        <p>Bootstrap</p>
-        <p>CSS3</p>
-        <p>HTML5</p>
-        <p>Git</p>
-        <p>Visual Studio</p>
-        <p>Flask</p>
-        <p>Django</p>
-        <p>Adobe XD</p>
-        <p>Figma</p>
+        {skills.map(item => (
+          (
+            <div id='skill-item'>
+              <img  fill="currentColor" src={item.icon} />
+              <p>{item.name}</p>
+            </div>
+          )
+        ))}
+
       </div>
+    </div>
     </div>
   );
 }
@@ -280,7 +325,7 @@ function App() {
       <NavBar />
       <div className="Wrapper">
         <BackVideo />
-        <About />
+       
         <Section />
 
         <Skills />

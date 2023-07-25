@@ -235,10 +235,10 @@ a{
   
 }
 
-#about, #skills{
+#skills{
   margin-top: 240px;
   padding: 20px;
-  scroll-behavior: smooth;    /* <----- THE SECRET ---- */
+      /* <----- THE SECRET ---- */
 }
 
 #projects{
@@ -306,7 +306,47 @@ a{
     display: flex;
   }
 
+#skills{
+  margin-top: 100px;
+  margin-right: 50px;
+  /* margin-left: auto; */
+}
+
+  #skills #text{
+   display: flex;
+   margin-left: 50px;
+   
+    margin-top: 0;
+ 
+  }
+
+
+
+  #card{
+    width: 600px;
+    margin-right: 60px;
+    margin-left: 70px;
+    margin-top: 40px;
+  }
+
   .Section img{
     height: 400px;
   }
+
+  #skills-list{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 100px;
+    margin-top: 40px;
+  }
+}
+
+#skills-list img{
+  height: 50px;
+}
+
+#skill-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
