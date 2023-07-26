@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import adobeXd from "./assets/icons/icons8-adobe-xd.svg";
 import bootstrap from "./assets/icons/icons8-bootstrap.svg";
-
 import javascript from "./assets/icons/icons8-javascript.svg";
 import python from "./assets/icons/icons8-python.svg";
 import css3 from "./assets/icons/icons8-django.svg";
@@ -14,6 +13,7 @@ import nodejs from "./assets/icons/icons8-nodejs.svg";
 import visualStudio from "./assets/icons/icons8-visual-studio.svg";
 import react from "./assets/icons/icons8-react.svg";
 import vuejs from "./assets/icons/icons8-vue-js.svg";
+import firebase from "./assets/icons/icons8-firebase.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./aboutCard.css";
@@ -36,6 +36,9 @@ import { FormContext } from "./Context.tsx";
 import PC from "./assets/pc.jpg";
 import Pic from "./assets/dev.png";
 import Flag from "./assets/brasil.png";
+import programador from "./assets/imgs/programador.png";
+import html from "./assets/imgs/html.png";
+import system from "./assets/imgs/recursos-personalizados.png";
 // const python = import("./assets/icons/icons8-python.svg")
 
 
@@ -159,7 +162,14 @@ function NavBar() {
 function Section() {
   return (
     <div id="about" class="Section">
-      <img src={Pic} />
+
+      <div id='colagem'>
+      <img id='bg' src={Pic} />
+      <img id="mask1" src={html} />
+      <img id="mask2" src={system} />
+
+      </div>
+
 
       <div>
         <p id="subt">Seja bem-vindo ao meu portfólio!</p>
@@ -197,14 +207,16 @@ function randColor(){
       <div id="card">
       
         <div id="div1">
-          <p id="level">Level Junior</p>
-          <div id="pic"><p>Pic</p></div>
+          <p id="level">Nivel Junior</p>
+     
+            <img id="pic" src="https://avatars.githubusercontent.com/u/82860253?v=4" />
+       
         </div>
         
         <div id="div2">
           <p id="name">Jesiel Gomes</p>
-          <div id="country">Country: <img src={Flag} /></div>
-          <p id="age">Age: <span>22</span></p>
+          <div id="country">Pais: <img src={Flag} /></div>
+          <p id="age">Idade: <span>22</span></p>
           <p id="hobs">Hobbies: <span style={{backgroundColor: randColor()}}>Piano</span>, <span style={{backgroundColor: randColor()}}>Books</span></p>
         </div>
         
@@ -230,6 +242,7 @@ function Skills() {
     {name: 'Flask', icon: flask},
     {name: 'Adobe XD', icon: adobeXd},
     {name: 'Figma', icon: figma},
+    {name: 'Firebase', icon: firebase},
   ]
 
   skills.map(item =>{
@@ -292,6 +305,8 @@ function Footer() {
   return (
     <div id="projects">
       {/*<img src={PC} />*/}
+
+   
       <p id="title">
         What would you do if you had a software expert available at your
         fingertips?
@@ -301,7 +316,7 @@ function Footer() {
         Want to start new project? Or just say hey. You can also follow me on
         Instagram.
       </p>
-
+  
       <hr id="line" />
 
       <div id="footer">
@@ -329,7 +344,7 @@ function App() {
         <Section />
 
         <Skills />
-        <Projects />
+        {/* <Projects /> */}
         <Footer />
       </div>
     </div>

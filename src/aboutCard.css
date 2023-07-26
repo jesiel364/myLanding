@@ -1,5 +1,9 @@
 #card{
-  background-color: #363636 ;
+  /* background-color: #363636 ; */
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   /*padding: 20px;*/
   border-radius: 12px;
   display: flex ;
@@ -24,10 +28,14 @@
 }
 
 #pic{
-  background-color: #282828 ;
-  padding: 20px;
-  height: 40px;
-  width: 40px;
+  /* background-color: #282828 ; */
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 4px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   margin-top: 10px;
 }
@@ -82,7 +90,9 @@
 
 #hobs span {
   /*background-color: green;*/
-  padding: 2px;
+  padding: 4px;
+  padding-bottom: 1px;
+  padding-top: 1px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 12px;
