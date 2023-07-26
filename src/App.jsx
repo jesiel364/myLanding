@@ -215,6 +215,7 @@ function randColor(){
         
         <div id="div2">
           <p id="name">Jesiel Gomes</p>
+          <div id="country">Programador</div>
           <div id="country">Pais: <img src={Flag} /></div>
           <p id="age">Idade: <span>22</span></p>
           <p id="hobs">Hobbies: <span style={{backgroundColor: randColor()}}>Piano</span>, <span style={{backgroundColor: randColor()}}>Books</span></p>

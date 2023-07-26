@@ -229,7 +229,7 @@ a{
 }
 
 #skills-list p{
-/*  background-color: green;*/
+ /* background-color: green; */
 }
 
   
@@ -310,7 +310,7 @@ a{
   }
 
   #skills{
-    padding-top: 40px;
+    margin-top: 40px;
     /* margin-right: 50px; */
     /* margin-left: auto; */
   }
