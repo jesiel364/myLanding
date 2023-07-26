@@ -3,7 +3,7 @@ import adobeXd from "./assets/icons/icons8-adobe-xd.svg";
 import bootstrap from "./assets/icons/icons8-bootstrap.svg";
 import javascript from "./assets/icons/icons8-javascript.svg";
 import python from "./assets/icons/icons8-python.svg";
-import css3 from "./assets/icons/icons8-django.svg";
+import css3 from "./assets/icons/icons8-css3.svg";
 import figma from "./assets/icons/icons8-figma.svg";
 import flask from "./assets/icons/icons8-flask.svg";
 import django from "./assets/icons/icons8-django.svg";
@@ -48,9 +48,10 @@ function FlatIcon(props) {
 }
 
 function Menu(props) {
-  const { show, setShow } = useContext(FormContext);
+  const { show, setShow, lg, lang, setLang } = useContext(FormContext);
   setShow(props.active);
 
+  setLang('en')
   function handle(evt) {
     evt.preventDefault();
     setShow(false);
@@ -65,7 +66,7 @@ function Menu(props) {
       <div className={show ? "active" : "disable"}>
         <div id="menu-card">
           <div id="first">
-            <a href="#skills">Skills</a>
+            <a href="#skills">{lg[0].menu[1]}</a>
             <button
               onClick={(evt) => {
                 handle(evt);
@@ -75,17 +76,17 @@ function Menu(props) {
             </button>
           </div>
 
-          <a href="#projects">projetos</a>
-          <a href="#footer">Contato</a>
+          <a href="#projects">{lg[0].menu[2]}</a>
+          <a href="#footer">{lg[0].menu[3]}</a>
           <a href="#footer">GitHub</a>
 
           <div id="last">
-            <p>Trocar tema</p>
+            <p>{lg[0].menu[4]}</p>
             <select>
-              <option>
+              <option value='dark'>
                 <Icon path={mdiWeatherNight} size={1} /> Dark
               </option>
-              <option>
+              <option value='light'>
                 <Icon path={mdiWeatherSunny} size={1} /> Light
               </option>
             </select>
@@ -110,11 +111,26 @@ function BackVideo() {
 }
 
 function NavBar() {
-  const { show, setShow, windowSize } = useContext(FormContext);
-
+  const { show, setShow, windowSize, en, ptbr } = useContext(FormContext);
+  // const [test, setTest] = useState('f')
+  // setTest('j')
   function handleClick(evt) {
     evt.preventDefault();
     setShow(!show);
+  }
+
+console.log([ptbr[0]])
+let lg = ptbr
+  function changeLang(evt){
+    evt.preventDefault()
+    lg = en
+    alert(lg[0].lang)
+
+    // if(lang == 'en'){
+    //   setLang('ptbr')
+    // }else{
+    //   setLang('en')
+    // }
   }
 
   return (
@@ -141,10 +157,10 @@ function NavBar() {
 
         {windowSize > 768 && (
           <div id="menu-flex">
-            <a href="#about">Sobre</a>
-            <a href="#skills">Habilidades</a>
-            <a href="#projects">Projetos</a>
-            <a href="#footer">Contato</a>
+            <a href="#about">{lg[0].menu[0]}</a>
+            <a href="#skills">{lg[0].menu[1]}</a>
+            <a href="#projects">{lg[0].menu[2]}</a>
+            <a href="#footer">{lg[0].menu[3]}</a>
             <span>|</span>
             <a>
               <Icon path={mdiWeatherNight} size={1} />
@@ -152,6 +168,7 @@ function NavBar() {
             <a>
               <Icon path={mdiGithub} size={1} />
             </a>
+          <button id='lang' onClick={(evt) => changeLang(evt)}>{lg[0].lang}</button>
           </div>
         )}
       </div>
@@ -161,7 +178,7 @@ function NavBar() {
 
 function Section() {
   return (
-    <div id="about" class="Section">
+    <div id="about" className="Section">
 
       <div id='colagem'>
       <img id='bg' src={Pic} />
@@ -229,26 +246,27 @@ function randColor(){
 function Skills() {
 
   const skills = [
-    {name: 'JavaScript', icon: javascript},
-    {name: 'React', icon: react},
-    {name: 'Vite', icon: viteLogo},
-    {name: 'Vue', icon: vuejs},
-    {name: 'Node', icon: nodejs},
-    {name: 'Python', icon: python},
-    {name: 'Bootstrap', icon: bootstrap},
-    {name: 'CSS3', icon: css3},
-    {name: 'HTML5', icon: html5},
-    {name: 'Git', icon: git},
-    {name: 'Visual Studio', icon: visualStudio},
-    {name: 'Flask', icon: flask},
-    {name: 'Adobe XD', icon: adobeXd},
-    {name: 'Figma', icon: figma},
-    {name: 'Firebase', icon: firebase},
+    {id:1 ,name: 'JavaScript', icon: javascript},
+    {id:2 ,name: 'ReactJs', icon: react},
+    {id:3 ,name: 'Vite', icon: viteLogo},
+    {id:4 ,name: 'VueJs', icon: vuejs},
+    {id:5 ,name: 'Node', icon: nodejs},
+    {id:6 ,name: 'Python', icon: python},
+    {id:16 ,name: 'Django', icon: django},
+    {id:7 ,name: 'Bootstrap', icon: bootstrap},
+    {id:8 ,name: 'CSS3', icon: css3},
+    {id:9 ,name: 'HTML5', icon: html5},
+    {id:10 ,name: 'Git', icon: git},
+    {id:11 ,name: 'Visual Studio', icon: visualStudio},
+    {id:12 ,name: 'Flask', icon: flask},
+    {id:13 ,name: 'Adobe XD', icon: adobeXd},
+    {id:14 ,name: 'Figma', icon: figma},
+    {id:15 ,name: 'Firebase', icon: firebase},
   ]
 
-  skills.map(item =>{
-    console.log(item.name)
-  })
+  // skills.map(item =>{
+  //   console.log(item.name)
+  // })
 
   return (
     <div id="skills">
@@ -275,7 +293,7 @@ function Skills() {
       <div id="skills-list">
         {skills.map(item => (
           (
-            <div id='skill-item'>
+            <div key={item.id} id='skill-item'>
               <img  fill="currentColor" src={item.icon} />
               <p>{item.name}</p>
             </div>
