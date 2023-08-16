@@ -40,6 +40,8 @@ import programador from "./assets/imgs/programador.png";
 import html from "./assets/imgs/html.png";
 import system from "./assets/imgs/recursos-personalizados.png";
 // const python = import("./assets/icons/icons8-python.svg")
+import Lottie from 'lottie-react'
+import lottieDev from './lottie.json'
 
 
 
@@ -108,6 +110,12 @@ function BackVideo() {
       autoPlay
     ></video>
   );
+}
+
+function LottieDev(){
+  return (
+    <Lottie className="lottie" animationData={lottieDev} />
+  )
 }
 
 function NavBar() {
@@ -180,12 +188,12 @@ function Section() {
   return (
     <div id="about" className="Section">
 
-      <div id='colagem'>
+      {/* <div id='colagem'>
       <img id='bg' src={Pic} />
       <img id="mask1" src={html} />
       <img id="mask2" src={system} />
 
-      </div>
+      </div> */}
 
 
       <div>
@@ -358,7 +366,8 @@ function App() {
     <div id="container">
       <NavBar />
       <div className="Wrapper">
-        <BackVideo />
+        {/* <BackVideo /> */}
+        <LottieDev />
        
         <Section />
 

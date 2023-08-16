@@ -16,6 +16,11 @@
 
 }
 
+.lottie{
+ height: 300px;
+ /* min-height: 100px; */
+}
+
 .NavBar {
   margin: 0;
   padding: 14px;
